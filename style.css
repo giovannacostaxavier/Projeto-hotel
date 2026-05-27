@@ -1,8 +1,11 @@
-*,*::before,*::after{
+*,
+*::before,
+*::after{
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
 }
+
 
 :root {
     --verde:     #52B788;  
@@ -11,105 +14,117 @@
     --text:     #3D5A4C;  
     --light-bg: #D8F3DC;  
     --white:    #F5FAF6;  
-  }
+}
 
-  body{
+
+body{
     font-family: 'DM Sans', sans-serif;
     color: var(--dark);
     background: var(--white);
-  }
+    overflow-x: hidden;
+}
 
-  .navbar{
+
+.navbar{
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     z-index: 100;
+
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 25px 60px;
-  }
 
-  .logo{
+    padding: 25px 60px;
+}
+
+.logo{
     display: flex;
     align-items: center;
     gap: 10px;
-  }
+}
 
-  .nomeLogo{
+.nomeLogo{
     display: block;
     font-family: 'Playfair Display', serif;
     font-size: 30px;
     font-weight: 700;
     color: var(--white);
     line-height: 1;
-  }
+}
 
-  .abaixoNome{
+.abaixoNome{
     display: block;
     font-size: 17px;
     color: rgba(255, 255, 255, 0.886);
     letter-spacing: 1;
-  }
+}
 
-  .navLinks{
+.navLinks{
     list-style: none;
     display: flex;
     align-items: center;
     gap: 35px;
-    a{
-        color: var(--white);
-        text-decoration: none;
-        font-size: 15px;
-        font-weight: 500;
-        transition: color 0.2s;
-    }
-  }
+}
 
-  .navLinks a:hover{
+.navLinks a{
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.navLinks a:hover{
     color: var(--verde);
-  }
+}
 
-  .navLinks a.btnNav{
-        background: var(--verde);
-        color: var(--white);
-        padding: 10px 25px;
-        border-radius: 50px;
-        font-weight: 600;
-        transition: background 0.2s transform 0.2s;
-  }
+.navLinks a.btnNav{
+    background: var(--verde);
+    color: var(--white);
+    padding: 10px 25px;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: background 0.2s transform 0.2s;
+}
 
-  .navLinks a.btnNav:hover{
+.navLinks a.btnNav:hover{
     background: var(--verde-dark);
     transform: translateY(-2px);
-  }
+}
 
-  .topo {
+
+.topo {
     position: relative;
     width: 100%;
     height: 100vh;
     min-height: 600px;
+
     display: flex;
     align-items: center;
     justify-content: space-between; 
+
     padding: 0 10%;
+
     overflow: hidden;
     background: black;
 }
 
-  .imgTopo{
+.imgTopo{
     position: absolute;
     inset: 0;
     width: 100%;
     height: 100%;
     object-fit: cover;
-  }
+}
+
 .fundoEscuro{
     position: absolute;
     inset: 0;
     background: #1b3a2f33;
 }
+
 .topoContent {
     position: relative;
     z-index: 10;
@@ -119,26 +134,34 @@
 }
 
 @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } 
-   }
+    from { 
+        opacity: 0; 
+        transform: translateY(30px); 
+    } 
+    
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    } 
+}
 
-   .tituloTopo{
+.tituloTopo{
     font-family: 'Playfair Display',serif;
     font-size: clamp(52px,8vw,50px);
     color: var(--white);
     line-height: 1;
     margin-bottom: 20px;
-   }
+}
 
-   .descricaoTopo{
+.descricaoTopo{
     font-size: 15px;
     color:rgba(255,255,255,0.85);
     line-height: 1.7;
     max-width: 400px;
     margin-bottom: 35px;
-   }
+}
 
-   .btnTopo{
+.btnTopo{
     display: inline-block;
     background: var(--verde);
     color: var(--white);
@@ -148,15 +171,15 @@
     padding: 15px 35px;
     border-radius: 50px;
     transition: background 0.2s, transform 0.2s;
-   }
+}
 
-   .btnTopo:hover{
+.btnTopo:hover{
     background: var(--verde-dark);
     transform: translateY(-2px);
-   }
+}
 
 
-   .reservaCard {
+.reservaCard {
     position: relative;
     z-index: 10;
     background: rgba(245, 250, 246, 0.97);
@@ -168,87 +191,186 @@
     gap: 8px;
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
     margin-top: 60px;
-    h3{
-        font-family: 'Playfair Display', serif;
-        font-size: 22px;
-        color: var(--dark);
-        margin-bottom: 10px;
-    }
-    label{
-        font-size: 13px;
-        font-weight: 600;
-        color: var(--text);
-        letter-spacing: 0.04em;
-        margin-top: 8px;
-    }
-    input,select{
-        width: 100%;
-        padding: 12px 15px;
-        border: 1px solid var(--light-bg);
-        border-radius: 8px;
-        font-size: 14px;
-        color: var(--dark);
-        background: var(--white);
-        outline: none;
-        transition: border 0.2s;
-    }
-    button{
-        margin-top: 16px;
-        background: var(--verde);
-        color: var(--white);
-        border: none;
-        padding: 15px;
-        border-radius: 50px;
-        font-size: 15px;
-        font-weight: 600;
-        cursor: pointer;
-        transition: background 0.2s, transform 0.2s;
-    }
-    button:hover{
-        background: var(--verde-dark);
-        transform: translateY(-2px);
-    }
 }
+
+.reservaCard h3{
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.reservaCard label{
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    letter-spacing: 0.04em;
+    margin-top: 8px;
+}
+
+.reservaCard input,
+.reservaCard select{
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--light-bg);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--dark);
+    background: var(--white);
+    outline: none;
+    transition: border 0.2s;
+}
+
+.reservaCard button{
+    margin-top: 16px;
+    background: var(--verde);
+    color: var(--white);
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.reservaCard button:hover{
+    background: var(--verde-dark);
+    transform: translateY(-2px);
+}
+
+
 .quartos {
-  padding: 80px 10%;
+    padding: 80px 10%;
 }
 
 .quartos h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 36px;
-  color: var(--dark);
-  margin-bottom: 40px;
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--dark);
+    margin-bottom: 40px;
 }
 
 #listaQuartos {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
 }
 
 #listaQuartos div {
-  background: var(--white);
-  border: 1px solid var(--light-bg);
-  border-radius: 16px;
-  padding: 30px;
+    background: var(--white);
+    border: 1px solid var(--light-bg);
+    border-radius: 16px;
+    padding: 30px;
 }
 
 #listaQuartos h3 {
-  font-family: 'Playfair Display', serif;
-  font-size: 22px;
-  color: var(--dark);
-  margin-bottom: 10px;
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--dark);
+    margin-bottom: 10px;
 }
 
 #listaQuartos p {
-  font-size: 15px;
-  color: var(--text);
-  margin-bottom: 8px;
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 8px;
 }
+
 #listaQuartos img {
-  width: 100%;
-  height: 200px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-bottom: 15px;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+
+@media (max-width: 900px){
+
+    .navbar{
+        padding: 20px 25px;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .navLinks{
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .topo{
+        flex-direction: column;
+        justify-content: center;
+        padding: 140px 25px 60px;
+        gap: 40px;
+        text-align: center;
+        height: auto;
+    }
+
+    .topoContent{
+        max-width: 100%;
+    }
+
+    .descricaoTopo{
+        max-width: 100%;
+    }
+
+    .reservaCard{
+        width: 100%;
+        max-width: 400px;
+        margin-top: 0;
+    }
+
+    #listaQuartos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px){
+
+    .navbar{
+        padding: 15px 20px;
+    }
+
+    .navLinks{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .tituloTopo{
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .descricaoTopo{
+        font-size: 14px;
+    }
+
+    .btnTopo{
+        width: 100%;
+        text-align: center;
+    }
+
+    .reservaCard{
+        padding: 25px 20px;
+    }
+
+    #listaQuartos{
+        grid-template-columns: 1fr;
+    }
+
+    .quartos{
+        padding: 60px 20px;
+    }
+
+    .quartos h2{
+        font-size: 28px;
+        text-align: center;
+    }
+
+    #listaQuartos div{
+        padding: 20px;
+    }
 }
