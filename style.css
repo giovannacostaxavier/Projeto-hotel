@@ -337,20 +337,29 @@ img{
 @media (max-width: 900px){
 
     .navbar{
-        position: relative;
-
-        background: rgba(27, 58, 47, 0.95);
+        position: absolute;
 
         padding: 20px 25px;
 
         flex-direction: column;
-        gap: 20px;
+        justify-content: center;
+        align-items: center;
+
+        gap: 15px;
+    }
+
+    .logo{
+        justify-content: center;
+        text-align: center;
     }
 
     .navLinks{
-        gap: 20px;
+        flex-direction: row;
         flex-wrap: wrap;
+
         justify-content: center;
+
+        gap: 15px;
     }
 
     .topo{
@@ -359,9 +368,12 @@ img{
 
         text-align: center;
 
-        padding: 60px 25px;
+        padding: 140px 25px 60px;
 
         gap: 40px;
+
+        min-height: 100vh;
+        height: auto;
     }
 
     .topoContent{
