@@ -37,13 +37,10 @@ img{
     top: 0;
     left: 0;
     right: 0;
-
     z-index: 100;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 25px 60px;
 }
 
@@ -71,7 +68,6 @@ img{
 
 .navLinks{
     list-style: none;
-
     display: flex;
     align-items: center;
     gap: 35px;
@@ -92,12 +88,9 @@ img{
 .navLinks a.btnNav{
     background: var(--verde);
     color: var(--white);
-
     padding: 10px 25px;
     border-radius: 50px;
-
     font-weight: 600;
-
     transition: background 0.2s, transform 0.2s;
 }
 
@@ -106,47 +99,70 @@ img{
     transform: translateY(-2px);
 }
 
+.hamburguer{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 200;
+}
+
+.hamburguer span{
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburguer.aberto span:nth-child(1){
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburguer.aberto span:nth-child(2){
+    opacity: 0;
+}
+
+.hamburguer.aberto span:nth-child(3){
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 .topo{
     position: relative;
-
     width: 100%;
     min-height: 100vh;
     height: auto;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 0 10%;
-
     overflow: hidden;
-
     background: black;
 }
 
 .imgTopo{
     position: absolute;
     inset: 0;
-
     width: 100%;
     height: 100%;
-
     object-fit: cover;
 }
 
 .fundoEscuro{
     position: absolute;
     inset: 0;
-
     background: #1b3a2f33;
 }
 
 .topoContent{
     position: relative;
     z-index: 10;
-
     max-width: 500px;
-
     animation: fadeUp 0.9s ease both;
 }
 
@@ -155,7 +171,6 @@ img{
         opacity: 0;
         transform: translateY(30px);
     }
-
     to{
         opacity: 1;
         transform: translateY(0);
@@ -166,7 +181,6 @@ img{
     font-family: 'Playfair Display', serif;
     font-size: clamp(32px, 8vw, 50px);
     color: var(--white);
-
     line-height: 1.1;
     margin-bottom: 20px;
 }
@@ -174,26 +188,20 @@ img{
 .descricaoTopo{
     font-size: 15px;
     color: rgba(255,255,255,0.85);
-
     line-height: 1.7;
-
     max-width: 400px;
     margin-bottom: 35px;
 }
 
 .btnTopo{
     display: inline-block;
-
     background: var(--verde);
     color: var(--white);
-
     text-decoration: none;
     font-weight: 600;
     font-size: 15px;
-
     padding: 15px 35px;
     border-radius: 50px;
-
     transition: background 0.2s, transform 0.2s;
 }
 
@@ -204,29 +212,22 @@ img{
 
 .reservaCard{
     position: relative;
-    z-index: 10;
-
+    z-index: 200;  
     background: rgba(245, 250, 246, 0.97);
-
     border-radius: 16px;
-
     padding: 40px 35px;
     width: 320px;
-
     display: flex;
     flex-direction: column;
     gap: 8px;
-
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-
-    margin-top: 60px;
+    margin-top: 80px;
 }
 
 .reservaCard h3{
     font-family: 'Playfair Display', serif;
     font-size: 22px;
     color: var(--dark);
-
     margin-bottom: 10px;
 }
 
@@ -234,7 +235,6 @@ img{
     font-size: 13px;
     font-weight: 600;
     color: var(--text);
-
     letter-spacing: 0.04em;
     margin-top: 8px;
 }
@@ -242,37 +242,25 @@ img{
 .reservaCard input,
 .reservaCard select{
     width: 100%;
-
     padding: 12px 15px;
-
     border: 1px solid var(--light-bg);
     border-radius: 8px;
-
     font-size: 14px;
     color: var(--dark);
-
     background: var(--white);
-
     outline: none;
 }
 
 .reservaCard button{
     margin-top: 16px;
-
     background: var(--verde);
     color: var(--white);
-
     border: none;
-
     padding: 15px;
-
     border-radius: 50px;
-
     font-size: 15px;
     font-weight: 600;
-
     cursor: pointer;
-
     transition: background 0.2s, transform 0.2s;
 }
 
@@ -289,7 +277,6 @@ img{
     font-family: 'Playfair Display', serif;
     font-size: 36px;
     color: var(--dark);
-
     margin-bottom: 40px;
 }
 
@@ -301,10 +288,8 @@ img{
 
 #listaQuartos div{
     background: var(--white);
-
     border: 1px solid var(--light-bg);
     border-radius: 16px;
-
     padding: 30px;
 }
 
@@ -312,66 +297,58 @@ img{
     font-family: 'Playfair Display', serif;
     font-size: 22px;
     color: var(--dark);
-
     margin-bottom: 10px;
 }
 
 #listaQuartos p{
     font-size: 15px;
     color: var(--text);
-
     margin-bottom: 8px;
 }
 
 #listaQuartos img{
     width: 100%;
     height: 200px;
-
     object-fit: cover;
-
     border-radius: 10px;
-
     margin-bottom: 15px;
 }
 
+/* ── TABLET ── */
 @media (max-width: 900px){
 
     .navbar{
-        position: absolute;
-
         padding: 20px 25px;
-
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-
-        gap: 15px;
     }
 
-    .logo{
-        justify-content: center;
-        text-align: center;
+    .hamburguer{
+        display: flex;
     }
 
     .navLinks{
-        flex-direction: row;
-        flex-wrap: wrap;
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background: var(--dark);
+        padding: 90px 30px 40px;
+        z-index: 150;
+    }
 
-        justify-content: center;
-
-        gap: 15px;
+    .navLinks.aberto{
+        display: flex;
     }
 
     .topo{
         flex-direction: column;
         justify-content: center;
-
         text-align: center;
-
-        padding: 140px 25px 60px;
-
+        padding: 100px 25px 60px;
         gap: 40px;
-
         min-height: 100vh;
         height: auto;
     }
@@ -387,7 +364,6 @@ img{
     .reservaCard{
         width: 100%;
         max-width: 400px;
-
         margin-top: 0;
     }
 
@@ -396,15 +372,11 @@ img{
     }
 }
 
+/* ── MOBILE ── */
 @media (max-width: 600px){
 
     .navbar{
         padding: 15px 20px;
-    }
-
-    .navLinks{
-        flex-direction: column;
-        gap: 15px;
     }
 
     .tituloTopo{
