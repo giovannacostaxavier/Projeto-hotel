@@ -415,3 +415,39 @@ img{
         padding: 20px;
     }
 }
+.footer{
+    background: var(--dark);
+    padding: 30px 10%;
+}
+
+.footerContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footerNomeLogo{
+    color: var(--verde);
+}
+
+.footerAbaixoNome{
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footerDev{
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footerDev strong{
+    color: var(--verde);
+    font-weight: 600;
+}
+
+@media (max-width: 600px){
+    .footerContent{
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+}
