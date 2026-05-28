@@ -32,6 +32,7 @@ img{
     display: block;
 }
 
+/* ── NAVBAR ── */
 .navbar{
     position: absolute;
     top: 0;
@@ -132,6 +133,7 @@ img{
     transform: translateY(-7px) rotate(-45deg);
 }
 
+/* ── TOPO ── */
 .topo{
     position: relative;
     width: 100%;
@@ -210,6 +212,7 @@ img{
     transform: translateY(-2px);
 }
 
+/* ── RESERVA CARD ── */
 .reservaCard{
     position: relative;
     z-index: 200;
@@ -269,6 +272,7 @@ img{
     transform: translateY(-2px);
 }
 
+/* ── QUARTOS ── */
 .quartos{
     padding: 80px 10%;
 }
@@ -314,15 +318,17 @@ img{
     margin-bottom: 15px;
 }
 
+/* ── FOOTER ── */
 .footer{
     background: var(--dark);
-    padding: 30px 10%;
+    padding: 35px 10%;
 }
 
 .footerContent{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
 }
 
 .footerLogo{
@@ -353,6 +359,20 @@ img{
 .footerDev strong{
     color: var(--verde);
     font-weight: 600;
+}
+
+.footerGithub{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footerGithub:hover{
+    color: var(--verde);
 }
 
 /* ── TABLET ── */
@@ -458,7 +478,11 @@ img{
 
     .footerContent{
         flex-direction: column;
-        gap: 15px;
         text-align: center;
+        gap: 15px;
+    }
+
+    .footerGithub{
+        justify-content: center;
     }
 }
