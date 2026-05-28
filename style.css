@@ -212,7 +212,7 @@ img{
 
 .reservaCard{
     position: relative;
-    z-index: 200;  
+    z-index: 200;
     background: rgba(245, 250, 246, 0.97);
     border-radius: 16px;
     padding: 40px 35px;
@@ -312,6 +312,47 @@ img{
     object-fit: cover;
     border-radius: 10px;
     margin-bottom: 15px;
+}
+
+.footer{
+    background: var(--dark);
+    padding: 30px 10%;
+}
+
+.footerContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footerLogo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footerNomeLogo{
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--verde);
+    line-height: 1;
+}
+
+.footerAbaixoNome{
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1px;
+}
+
+.footerDev{
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footerDev strong{
+    color: var(--verde);
+    font-weight: 600;
 }
 
 /* ── TABLET ── */
@@ -414,37 +455,7 @@ img{
     #listaQuartos div{
         padding: 20px;
     }
-}
-.footer{
-    background: var(--dark);
-    padding: 30px 10%;
-}
 
-.footerContent{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.footerNomeLogo{
-    color: var(--verde);
-}
-
-.footerAbaixoNome{
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.footerDev{
-    font-size: 14px;
-    color: rgba(255, 255, 255, 0.6);
-}
-
-.footerDev strong{
-    color: var(--verde);
-    font-weight: 600;
-}
-
-@media (max-width: 600px){
     .footerContent{
         flex-direction: column;
         gap: 15px;
