@@ -14,7 +14,14 @@
                 <span class="abaixoNome">Alvares</span>
             </div>
         </div>
-        <ul class="navLinks">
+
+        <button class="hamburguer" id="hamburguer" aria-label="Abrir menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="navLinks" id="navLinks">
             <li><a href="#">Sobre nós</a></li>
             <li><a href="#">Contacte-nos</a></li>
             <li><a href="#" class="btnNav">Reserve já</a></li>
@@ -31,29 +38,25 @@
         </div>
         <div class="reservaCard">
             <h3>Reserve a sua estadia</h3>
-        
             <label>Check-in</label>
             <input type="date" id="checkin">
-        
             <label>Check-out</label>
             <input type="date" id="checkout">
-        
             <label>Hóspedes</label>
             <select>
                 <option>1 hóspede</option>
                 <option>2 hóspedes</option>
                 <option>3 hóspedes</option>
             </select>
-        
             <button id="btnVerificar">Verificar disponibilidade</button>
         </div>
-    
     </section>
-        <section class="quartos">
-            <h2>Os nossos quartos</h2>
-            <div id="listaQuartos"></div>
-        </section>
-    
-        <script src="script.js"></script>
+
+    <section class="quartos">
+        <h2>Os nossos quartos</h2>
+        <div id="listaQuartos"></div>
+    </section>
+
+    <script src="script.js"></script>
 </body>
 </html>
