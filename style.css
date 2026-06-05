@@ -1,16 +1,24 @@
-*,*::before,*::after{
-    margin: 0px;
-    padding: 0px;
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
 :root {
-  --gold: #D4956A;
-  --gold-dark: #b8764a;
-  --dark: #1a1a1a;
-  --text: #444;
-  --light-bg: #fdf8f4;
-  --white: #ffffff;
+    --verde: #52B788;
+    --verde-dark: #2D6A4F;
+    --dark: #1B3A2F;
+    --text: #3D5A4C;
+    --light-bg: #D8F3DC;
+    --white: #F5FAF6;
+}
+
+html,
+body{
+    width: 100%;
+    overflow-x: hidden;
 }
 
 body{
@@ -19,6 +27,12 @@ body{
     background: var(--white);
 }
 
+img{
+    max-width: 100%;
+    display: block;
+}
+
+/* ── NAVBAR ── */
 .navbar{
     position: absolute;
     top: 0;
@@ -28,7 +42,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 24px 60px;
+    padding: 25px 60px;
 }
 
 .logo{
@@ -37,14 +51,10 @@ body{
     gap: 10px;
 }
 
-.logo-icon{
-    font-size: 28px;
-}
-
 .nomeLogo{
     display: block;
-    font-family: 'Playfair Display',serif;
-    font-size: 20px;
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
     font-weight: 700;
     color: var(--white);
     line-height: 1;
@@ -52,8 +62,8 @@ body{
 
 .abaixoNome{
     display: block;
-    font-size: 11px;
-    color:rgba(255,255,255,0.7);
+    font-size: 17px;
+    color: rgba(255, 255, 255, 0.886);
     letter-spacing: 1px;
 }
 
@@ -61,44 +71,80 @@ body{
     list-style: none;
     display: flex;
     align-items: center;
-    gap: 36px;
+    gap: 35px;
+}
 
-    a{
-        color: rgba(255,255,255,0.9);
-        text-decoration: none;
-        font-size: 14px;
-        font-weight: 500;
-        transition: color 0.2s;
-    }
+.navLinks a{
+    color: var(--white);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 500;
+    transition: color 0.2s;
 }
 
 .navLinks a:hover{
-    color: var(--gold);
+    color: var(--verde);
 }
 
-.navLinks a.botaoNav{
-    background: var(--gold);
+.navLinks a.btnNav{
+    background: var(--verde);
     color: var(--white);
-    padding: 10px 24px;
+    padding: 10px 25px;
     border-radius: 50px;
     font-weight: 600;
     transition: background 0.2s, transform 0.2s;
 }
 
-.navLinks a.botaoNav:hover{
-    background: var(--gold-dark);
+.navLinks a.btnNav:hover{
+    background: var(--verde-dark);
     transform: translateY(-2px);
 }
 
+.hamburguer{
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    z-index: 200;
+}
+
+.hamburguer span{
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburguer.aberto span:nth-child(1){
+    transform: translateY(7px) rotate(45deg);
+}
+
+.hamburguer.aberto span:nth-child(2){
+    opacity: 0;
+}
+
+.hamburguer.aberto span:nth-child(3){
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── TOPO ── */
 .topo{
     position: relative;
     width: 100%;
-    height: 100vh;
-    min-height: 600px;
+    min-height: 100vh;
+    height: auto;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    padding: 0 10%;
     overflow: hidden;
-    background: #2a2a2a;
+    background: black;
 }
 
 .imgTopo{
@@ -112,341 +158,331 @@ body{
 .fundoEscuro{
     position: absolute;
     inset: 0;
-    background: linear-gradient(to right, rgba(0, 0, 0, 0.627) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0.05) 100%);
+    background: #1b3a2f33;
 }
 
 .topoContent{
     position: relative;
     z-index: 10;
-    max-width: 560px;
-    margin-left: 10%;
+    max-width: 500px;
     animation: fadeUp 0.9s ease both;
 }
 
-@keyframes fadeUp {
-    from { opacity: 0; transform: translateY(30px); } 
-    to { opacity: 1; transform: translateY(0); } 
-}
-
-.subtituloTopo { 
-    font-size: 14px; 
-    font-weight: 600; 
-    letter-spacing: 3px; 
-    text-transform: uppercase; 
-    color: rgba(255,255,255,0.8); 
-    margin-bottom: 12px; 
+@keyframes fadeUp{
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to{
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .tituloTopo{
     font-family: 'Playfair Display', serif;
-    font-size: clamp(52px,8vw,90px);
-    font-weight: 900;
+    font-size: clamp(32px, 8vw, 50px);
     color: var(--white);
-    line-height: 1;
+    line-height: 1.1;
     margin-bottom: 20px;
 }
 
 .descricaoTopo{
-    font-size: 16px;
-    color:rgba(255,255,255,0.85);
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
     line-height: 1.7;
     max-width: 400px;
-    margin-bottom: 36px;
+    margin-bottom: 35px;
 }
 
-.btn-doacao{
+.btnTopo{
     display: inline-block;
-    background: var(--gold);
+    background: var(--verde);
     color: var(--white);
     text-decoration: none;
     font-weight: 600;
-    font-size: 14px;
-    padding: 14px 34px;
+    font-size: 15px;
+    padding: 15px 35px;
     border-radius: 50px;
     transition: background 0.2s, transform 0.2s;
 }
 
-.btn-doacao:hover { 
-    background: var(--gold-dark); 
-    transform: translateY(-2px); 
+.btnTopo:hover{
+    background: var(--verde-dark);
+    transform: translateY(-2px);
 }
 
-.secaoGatos,.secaoCaes{
-    padding: 70px 60px;
-    background: var(--light-bg);
+/* ── RESERVA CARD ── */
+.reservaCard{
+    position: relative;
+    z-index: 200;
+    background: rgba(245, 250, 246, 0.97);
+    border-radius: 16px;
+    padding: 40px 35px;
+    width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    margin-top: 80px;
 }
 
-.secaoCaes{
-    background: var(--white);
+.reservaCard h3{
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--dark);
+    margin-bottom: 10px;
 }
 
-.subtituloAdc{
+.reservaCard label{
     font-size: 13px;
     font-weight: 600;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 12px;
-}
-
-.tituloAdc{
-    font-family: 'Playfair Display', serif; 
-    font-size: clamp(32px,4vw,48px);
-    font-weight: 700;
-    margin-bottom: 16px;
-}
-
-.descricaoSecao{
-    font-size: 16px;
     color: var(--text);
-    max-width: 580px;
-    margin-bottom: 50px;
+    letter-spacing: 0.04em;
+    margin-top: 8px;
 }
 
-.cards{
+.reservaCard input,
+.reservaCard select{
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--light-bg);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--dark);
+    background: var(--white);
+    outline: none;
+}
+
+.reservaCard button{
+    margin-top: 16px;
+    background: var(--verde);
+    color: var(--white);
+    border: none;
+    padding: 15px;
+    border-radius: 50px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.reservaCard button:hover{
+    background: var(--verde-dark);
+    transform: translateY(-2px);
+}
+
+/* ── QUARTOS ── */
+.quartos{
+    padding: 80px 10%;
+}
+
+.quartos h2{
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    color: var(--dark);
+    margin-bottom: 40px;
+}
+
+#listaQuartos{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
-    transition: opacity 0.3s, transform 0.3s;
-}
-
-.card{
-    background: var(--white);
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.07);
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.card:hover{
-    transform: translateY(-6px);
-    box-shadow: 0 12px 32px rgba(0,0,0,0.12); 
-}
-
-.imgCG{
-    width: 100%;
-    height: 260px;
-    background: #e8e8e4;
-    overflow: hidden;
-    
-    img{
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        object-position: center top;
-        display: block;
-    }
-}
-
-.descricaoBody{
-    padding: 20px;
-
-    h3{
-        font-family:'Playfair Display', serif; 
-        font-size: 22px;
-        font-weight: 700;
-        margin-bottom: 6px;
-    }
-
-    p{
-        font-size: 14px;
-        color: var(--text);
-        margin-bottom: 20px;
-    }
-}
-
-.btnAdotar{
-    display: inline-block;
-    border: 2px solid var(--gold);
-    color: var(--gold);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 13px;
-    padding: 10px 26px;
-    border-radius: 50px;
-    transition: all 0.2s;
-}
-
-.btnAdotar:hover{
-    background: var(--gold);
-    color: var(--white);
-}
-
-.stats{
-    background-color: var(--dark);
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
-    padding: 70px 60px; 
-    gap: 20px; 
-}
-
-.stat { 
-    text-align: center; 
-    display: flex; 
-    flex-direction: column; 
-    gap: 8px; 
-}
-
-.stat-num { 
-    font-family: 'Playfair Display', serif; 
-    font-size: 48px; 
-    font-weight: 900; 
-    color: var(--gold); 
-    line-height: 1; 
-}
-
-.stat-label { 
-    font-size: 14px;
-    color: rgba(255,255,255,0.65); 
-    letter-spacing: 1px; 
-    text-transform: uppercase; 
-}
-
-.footer { 
-    background: #111; 
-    padding: 40px 60px; 
-    display: flex; 
-    align-items: center; 
-    justify-content: space-between; 
-    flex-wrap: wrap; 
-    gap: 20px; 
-}
-
-.footer-logo { 
-    display: flex; 
-    align-items:center; 
-    gap: 8px; 
-    color: rgba(255,255,255,0.4); 
-}
-
-.footer p { 
-    font-size: 13px; 
-    color: rgba(255,255,255,0.4); 
-}
-
-.footer-links { 
-    list-style: none; 
-    display: flex; 
-    gap: 24px; 
-}
-
-.footer-links a { 
-    font-size: 13px; 
-    color: rgba(255,255,255,0.5); 
-    text-decoration: none; 
-    transition: color 0.2s; 
-}
-
-.footer-links a:hover { 
-    color: var(--gold); 
-}
-
-.carrossel-controles {
-    display: flex;
-    gap: 12px;
-    margin-top: 32px;
-}
-
-.btn-seta {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    border: 2px solid var(--gold);
-    background: transparent;
-    color: var(--gold);
-    font-size: 20px;
-    cursor: pointer;
-    transition: all 0.2s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.btn-seta:hover:not(:disabled) {
-    background: var(--gold);
-    color: var(--white);
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    padding: 20px 24px;
-  }
-
-  .cards {
-    grid-template-columns: 1fr;
-  }
-
-  .stat-label {
-    font-size: 12px;
-    letter-spacing: 0;
-  }
-
-  .navLinks {
-    display: none;
-    flex-direction: column;
-    align-items: center;
     gap: 24px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0,0,0,0.95);
-    z-index: 200;
-    justify-content: center;
-  }
+}
 
-  .navLinks.aberto {
-    display: flex;
-  }
-
-  .navLinks a {
-    font-size: 20px;
-  }
-
-  .menuHamburguer {
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    z-index: 300;
-    padding: 4px;
-  }
-
-  .menuHamburguer span {
-    display: block;
-    width: 26px;
-    height: 2px;
+#listaQuartos div{
     background: var(--white);
-    border-radius: 2px;
-    transition: all 0.3s;
-  }
+    border: 1px solid var(--light-bg);
+    border-radius: 16px;
+    padding: 30px;
+}
 
-  .stats {
-    grid-template-columns: repeat(2, 1fr);
-    padding: 50px 24px;
-    gap: 40px;
-  }
+#listaQuartos h3{
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
 
-  .stat-num {
-    font-size: 36px;
-  }
+#listaQuartos p{
+    font-size: 15px;
+    color: var(--text);
+    margin-bottom: 8px;
+}
 
-  .secaoGatos, .secaoCaes {
-    padding: 60px 24px;
-  }
+#listaQuartos img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
 
-  .footer {
-    padding: 30px 24px;
-    flex-direction: column;
-    text-align: center;
-  }
+/* ── FOOTER ── */
+.footer{
+    background: var(--dark);
+    padding: 35px 10%;
+}
 
-  .topoContent {
-    margin-left: 5%;
-    margin-right: 5%;
-    max-width: 100%;
-  }
+.footerContent{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footerLogo{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footerNomeLogo{
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--verde);
+    line-height: 1;
+}
+
+.footerAbaixoNome{
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 1px;
+}
+
+.footerDev{
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.footerDev strong{
+    color: var(--verde);
+    font-weight: 600;
+}
+
+.footerGithub{
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: rgba(255, 255, 255, 0.6);
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.footerGithub:hover{
+    color: var(--verde);
+}
+
+/* ── TABLET ── */
+@media (max-width: 900px){
+
+    .navbar{
+        padding: 20px 25px;
+    }
+
+    .hamburguer{
+        display: flex;
+    }
+
+    .navLinks{
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        background: var(--dark);
+        padding: 90px 30px 40px;
+        z-index: 150;
+    }
+
+    .navLinks.aberto{
+        display: flex;
+    }
+
+    .topo{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        padding: 100px 25px 60px;
+        gap: 40px;
+        min-height: 100vh;
+        height: auto;
+    }
+
+    .topoContent{
+        max-width: 100%;
+    }
+
+    .descricaoTopo{
+        max-width: 100%;
+    }
+
+    .reservaCard{
+        width: 100%;
+        max-width: 400px;
+        margin-top: 0;
+    }
+
+    #listaQuartos{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ── MOBILE ── */
+@media (max-width: 600px){
+
+    .navbar{
+        padding: 15px 20px;
+    }
+
+    .tituloTopo{
+        font-size: 32px;
+        line-height: 1.2;
+    }
+
+    .descricaoTopo{
+        font-size: 14px;
+    }
+
+    .btnTopo{
+        width: 100%;
+        text-align: center;
+    }
+
+    .reservaCard{
+        width: 100%;
+        padding: 25px 20px;
+    }
+
+    .quartos{
+        padding: 60px 20px;
+    }
+
+    .quartos h2{
+        text-align: center;
+        font-size: 28px;
+    }
+
+    #listaQuartos{
+        grid-template-columns: 1fr;
+    }
+
+    #listaQuartos div{
+        padding: 20px;
+    }
+
+    .footerContent{
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+
+    .footerGithub{
+        justify-content: center;
+    }
 }
